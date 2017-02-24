@@ -5,31 +5,65 @@
 		<title>Document</title>
 	</head>
 	<body>
+		<h1>Big Jim's White Trash Sandwich Shack and Towing</h1>
 		<fieldset>
-			<legend>Type of Bread</legend>
-			<div id="bread">
-				<input type="checkbox" name="bread">White	
-				<input type="checkbox" name="bread">Wheat
+			<legend>Breads:</legend>
+			<div id="bread-chooser">
+				<input type="radio" name="bread" value="bunny">Bunny	
+				<input type="radio" name="bread" value="ho-ho">Ho-ho				
+				<input type="radio" name="bread" value="twinkie">Twinkie	
+				<input type="radio" name="bread" value="wonder">Wonder
 			</div>
-			</fieldset>
-			<div id="cheese">
-				<input type="checkbox" name="cheese">American
-				<input type="checkbox" name="cheese">Pepper Jack
+		</fieldset>
+		<fieldset>
+			<legend>Cheeses:</legend>
+			<div id="cheese-chooser">
+				<input type="checkbox" name="cheese" value="cheeze-whiz">Cheeze Whiz
+				<input type="checkbox" name="cheese" value="government">Government
+				<input type="checkbox" name="cheese" value="squeezy">Squeezy Cheese
+				<input type="checkbox" name="cheese" value="velveeta">Velveeta
 			</div>
-			<div id="condiment">
-				<input type="checkbox" name="condiment">Mayo
-				<input type="checkbox" name="condiment">Mustard
+		</fieldset>
+		<fieldset>
+			<legend>Mayo options:</legend>
+			<div id="mayo-chooser">
+				<input type="checkbox" name="condiment" value="mayo">Mayo
+				<input type="checkbox" name="condiment" value="double-mayo">Double Mayo
+				<input type="checkbox" name="condiment" value="triple-mayo">Triple Mayo
+				<input type="checkbox" name="condiment" value="miricle">Miricle Whip
 			</div>
-			<div id="meat">
-				<input type="checkbox" name="meat">Roast Beef
-				<input type="checkbox" name="meat">Turkey
+		</fieldset>
+		<fieldset>
+			<legend>Meats:</legend>
+			<div id="meat-chooser">
+				<input type="checkbox" value="beaver" name="meat">Beaver
+				<input type="checkbox" value="opossum" name="meat">Opossum
+				<input type="checkbox" value="squirrel" name="meat">Squirrel
+				<input type="checkbox" value="mayo" name="meat">Mayo
 			</div>
-			<div id="veggie">
-				<input type="checkbox" name="veggie">Lettuce
-				<input type="checkbox" name="veggie">Tomato
+		</fieldset>
+		<fieldset>
+			<legend>Veggies:</legend>
+			<div id="veggie-chooser">
+				<input type="checkbox" name="veggie">Fried Okra
+				<input type="checkbox" name="veggie">Ketchup
+				<input type="checkbox" name="veggie">Mac and Cheese
+				<input type="checkbox" name="veggie">Zapp's Chips
 			</div>
+		</fieldset>
+		<div id="meat-selection">
+		</div>
+		<div id="bread-selection">
+		</div>			
+		<div id="cheese-selection">
+		</div>			
+		<div id="mayo-selection">
+		</div>		
 
 		<script type="text/javascript" src="javascripts/SandwichMaker.js"></script>
+		<script type="text/javascript" src="javascripts/bread.js"></script>
+		<script type="text/javascript" src="javascripts/cheese.js"></script>
 		<script type="text/javascript" src="javascripts/meat.js"></script>
+		<script type="text/javascript" src="javascripts/dom-handler.js"></script>
 	</body>
 </html>

@@ -1,4 +1,4 @@
-console.log("Steak me home tonight!")
+// console.log("Steak me home tonight!")
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(maker) {
 

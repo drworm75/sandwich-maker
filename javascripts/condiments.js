@@ -1,4 +1,4 @@
-console.log("Menty Fresh!")
+// console.log("Menty Fresh!")
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(maker) {
 

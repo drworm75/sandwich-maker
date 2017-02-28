@@ -13,7 +13,8 @@ var SandwichMaker = (function() {
   return {
     addTopping: function(toppingKey, toppingTotal) {
     	totalPrice[toppingKey] = toppingTotal;
-    	console.log("Here's a total!", totalPrice.breads + totalPrice.cheeses);
+    	var finalPrice = totalPrice.breads + totalPrice.cheeses +totalPrice.condiments + totalPrice.meats + totalPrice.veggies;
+    	console.log("Here's a total!", finalPrice.toFixed(2));
  
       console.log("Total" , totalPrice)
     }

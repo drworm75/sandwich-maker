@@ -9,10 +9,10 @@
 		<fieldset>
 			<legend>Breads:</legend>
 			<div id="bread-chooser">
-				<input type="checkbox" name="bread" value="bunny">Bunny	
-				<input type="checkbox" name="bread" value="hoho">Ho-ho				
-				<input type="checkbox" name="bread" value="twinkie">Twinkie	
-				<input type="checkbox" name="bread" value="wonder">Wonder
+				<input type="radio" name="bread" value="bunny">Bunny	
+				<input type="radio" name="bread" value="hoho">Ho-ho				
+				<input type="radio" name="bread" value="twinkie">Twinkie	
+				<input type="radio" name="bread" value="wonder">Wonder
 			</div>
 		</fieldset>
 		<fieldset>
@@ -28,9 +28,9 @@
 			<legend>Mayo options:</legend>
 			<div id="mayo-chooser">
 				<input type="checkbox" name="condiment" value="mayo">Mayo
-				<input type="checkbox" name="condiment" value="double-mayo">Double Mayo
-				<input type="checkbox" name="condiment" value="triple-mayo">Triple Mayo
-				<input type="checkbox" name="condiment" value="miricle">Miricle Whip
+				<input type="checkbox" name="condiment" value="doublemayo">Double Mayo
+				<input type="checkbox" name="condiment" value="triplemayo">Triple Mayo
+				<input type="checkbox" name="condiment" value="miriclewhip">Miricle Whip
 			</div>
 		</fieldset>
 		<fieldset>
@@ -45,10 +45,10 @@
 		<fieldset>
 			<legend>Veggies:</legend>
 			<div id="veggie-chooser">
-				<input type="checkbox" name="veggie">Fried Okra
-				<input type="checkbox" name="veggie">Ketchup
-				<input type="checkbox" name="veggie">Mac and Cheese
-				<input type="checkbox" name="veggie">Zapp's Chips
+				<input type="checkbox" value="friedokra" name="veggie">Fried Okra
+				<input type="checkbox" value="ketchup" name="veggie">Ketchup
+				<input type="checkbox" value="macandcheese"name="veggie">Mac and Cheese
+				<input type="checkbox" value="zappschips"name="veggie">Zapp's Chips
 			</div>
 		</fieldset>
 		<div id="meat-selection">
@@ -58,12 +58,16 @@
 		<div id="cheese-selection">
 		</div>			
 		<div id="mayo-selection">
+		</div>			
+		<div id="veggie-selection">
 		</div>		
 
 		<script type="text/javascript" src="javascripts/SandwichMaker.js"></script>
 		<script type="text/javascript" src="javascripts/bread.js"></script>
 		<script type="text/javascript" src="javascripts/cheese.js"></script>
+		<script type="text/javascript" src="javascripts/condiments.js"></script>
 		<script type="text/javascript" src="javascripts/meat.js"></script>
+		<script type="text/javascript" src="javascripts/veggie.js"></script>
 		<script type="text/javascript" src="javascripts/dom-handler.js"></script>
 	</body>
 </html>

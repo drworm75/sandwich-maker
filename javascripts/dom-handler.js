@@ -22,36 +22,11 @@ var breadSelection = document.getElementById("bread-selection");
 var cheeseSelection = document.getElementById("cheese-selection");
 var mayoSelection = document.getElementById("mayo-selection");
 var meatSelection = document.getElementById("meat-selection");
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//       document.querySelector('#showAlert').addEventListener('change', changeHandler);
-// });
-
-function working() {
-}
-
-/* 
-  A <select> element broadcasts a change event, so you listen for it
-  and get the value of the topping from your augmented IIFE
-*/
-
-// breadChooser.addEventListener("change", function(event) {
-// 		var selectedBreads = []
-// 	for (var i = 0; i < breadChooser.childNodes.length; i++) {
-// 		if (breadChooser.childNodes[i].checked === true) {
-// 			selectedBreads.push(breadChooser.childNodes[i].value)
-// 		}
-// 	}
-// 	breadSelection.innerHTML = `will be served on delicious ${selectedBreads} bread `;
-
-//   // Determine the price of the topping chosen
-
-//   // Add the topping to the SandwichMaker to increase the total price
-// });
+var veggieSelection = document.getElementById("veggie-selection");
 
 breadChooser.addEventListener("change", function(event) {
 		var selectedBreads = []
+		var selectedBreadsHtml = []
 		var toppingPriceTotals = [];
 		var toppingTotal = 0;
 		var toppingKey = "breads";
@@ -59,6 +34,8 @@ breadChooser.addEventListener("change", function(event) {
 	for (var i = 0; i < breadChooser.childNodes.length; i++) {
 		if (breadChooser.childNodes[i].checked === true) {
 			selectedBreads.push(breadChooser.childNodes[i].value)
+			selectedBreadsHtml.push(breadChooser.childNodes[i].nextSibling.data)
+			console.log(selectedBreadsHtml);
 		}
 	}
 	for (var j = 0; j < selectedBreads.length; j++) {
@@ -66,15 +43,15 @@ breadChooser.addEventListener("change", function(event) {
 		// console.log(SandwichMaker.addBread(selectedBreads[j]));
     }
 	for (var k = 0; k < toppingPriceTotals.length; k++) {
-		console.log(toppingPriceTotals);
 		console.log(toppingTotal += toppingPriceTotals[k]);
 	}
 	SandwichMaker.addTopping(toppingKey, toppingTotal);
-	breadSelection.innerHTML = `will be served on delicious ${selectedBreads} bread `;
+	breadSelection.innerHTML = `will be served on delicious ${selectedBreadsHtml} bread `;
 });
 
 cheeseChooser.addEventListener("change", function(event) {
 		var selectedCheeses = []
+		var selectedCheesesHtml = [];
 		var toppingPriceTotals = [];
 		var toppingTotal = 0;
 		var toppingKey = "cheeses";
@@ -82,6 +59,8 @@ cheeseChooser.addEventListener("change", function(event) {
 	for (var i = 0; i < cheeseChooser.childNodes.length; i++) {
 		if (cheeseChooser.childNodes[i].checked === true) {
 			selectedCheeses.push(cheeseChooser.childNodes[i].value)
+			selectedCheesesHtml.push(cheeseChooser.childNodes[i].nextSibling.data)
+			console.log(selectedCheesesHtml);
 		}
 	}
 	for (var j = 0; j < selectedCheeses.length; j++) {
@@ -94,43 +73,81 @@ cheeseChooser.addEventListener("change", function(event) {
 		toppingTotal += toppingPriceTotals[k];
 	}
 	SandwichMaker.addTopping(toppingKey, toppingTotal);
-	cheeseSelection.innerHTML = `with tangy ${selectedCheeses} cheese `;
+	cheeseSelection.innerHTML = `with tangy ${selectedCheesesHtml} cheese `;
 });
 
 mayoChooser.addEventListener("change", function(event) {
-		var selectedMayo = []
+		var selectedMayos = []
+		var toppingPriceTotals = [];
+		var toppingTotal = 0;
+		var toppingKey = "condiments";
+
 	for (var i = 0; i < mayoChooser.childNodes.length; i++) {
 		if (mayoChooser.childNodes[i].checked === true) {
-			selectedMayo.push(mayoChooser.childNodes[i].value)
+			selectedMayos.push(mayoChooser.childNodes[i].value)
 		}
 	}
-	mayoSelection.innerHTML = `and topped with creamy ${selectedMayo} `;
+	for (var j = 0; j < selectedMayos.length; j++) {
+		toppingPriceTotals.push(SandwichMaker.addMayo(selectedMayos[j]));
+		console.log(selectedMayos);
 
-  // Determine the price of the topping chosen
-
-  // Add the topping to the SandwichMaker to increase the total price
+    }
+	for (var k = 0; k < toppingPriceTotals.length; k++) {
+		toppingTotal += toppingPriceTotals[k];
+		console.log(toppingPriceTotals);
+	}
+	SandwichMaker.addTopping(toppingKey, toppingTotal);
+	mayoSelection.innerHTML = `topped with creamy ${selectedMayos}`;
 });
 
 meatChooser.addEventListener("change", function(event) {
 		var selectedMeats = []
-  // Get the value chosen from the DOM
-  // SandwichMaker.addMeat();
- //  selectedTopping = event.target.value;
-	// console.log("Is checked?", event.target.checked);
-	// console.log("Value", selectedTopping)
+		var toppingPriceTotals = [];
+		var toppingTotal = 0;
+		var toppingKey = "meats";
+
 	for (var i = 0; i < meatChooser.childNodes.length; i++) {
 		if (meatChooser.childNodes[i].checked === true) {
 			selectedMeats.push(meatChooser.childNodes[i].value)
 		}
 	}
+	for (var j = 0; j < selectedMeats.length; j++) {
+		toppingPriceTotals.push(SandwichMaker.addMeat(selectedMeats[j]));
+		console.log(selectedMeats);
 
-
+    }
+	for (var k = 0; k < toppingPriceTotals.length; k++) {
+		toppingTotal += toppingPriceTotals[k];
+		console.log(toppingPriceTotals);
+	}
+	SandwichMaker.addTopping(toppingKey, toppingTotal);
 	meatSelection.innerHTML = `Your ${selectedMeats} sandwich`;
-	return selectedMeats;
-
-
-  // Determine the price of the topping chosen
-
-  // Add the topping to the SandwichMaker to increase the total price
 });
+
+veggieChooser.addEventListener("change", function(event) {
+		var selectedVeggies = []
+		var toppingPriceTotals = [];
+		var toppingTotal = 0;
+		var toppingKey = "veggies";
+
+	for (var i = 0; i < veggieChooser.childNodes.length; i++) {
+		if (veggieChooser.childNodes[i].checked === true) {
+			selectedVeggies.push(veggieChooser.childNodes[i].value)
+		}
+	}
+	for (var j = 0; j < selectedVeggies.length; j++) {
+		toppingPriceTotals.push(SandwichMaker.addVeggie(selectedVeggies[j]));
+		console.log(selectedVeggies);
+
+    }
+	for (var k = 0; k < toppingPriceTotals.length; k++) {
+		toppingTotal += toppingPriceTotals[k];
+		console.log(toppingPriceTotals);
+	}
+	SandwichMaker.addTopping(toppingKey, toppingTotal);
+	veggieSelection.innerHTML = `& garden fresh ${selectedVeggies}!`;
+});
+
+
+
 

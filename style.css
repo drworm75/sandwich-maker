@@ -1,0 +1,39 @@
+body {
+	background-color: goldenrod;
+}
+
+img {
+	max-width: 800px;
+	height: auto;
+}
+
+fieldset {
+	max-width: 800px;
+}
+
+.main-content {
+	display: flex;
+	flex-direction: row;
+	/*flex-wrap: no-wrap;*/
+	border: 2px solid blue;
+}
+
+.toppings {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid red;
+	/*flex-basis: 0;*/
+	max-width: 800px;
+}
+
+.selections {
+	min-width: 500px;
+	border: 2px solid red;
+
+}
+
+#total {
+	background-color: green;
+	color: white;
+	min-width: 500px;
+}
